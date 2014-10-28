@@ -1,0 +1,426 @@
+
+English below.
+
+======================
+
+Изменения:
+
+2.3.9
+
+- Исправлены визуальные проблемы в окошке с подробностями заказа в админке, которые появились в MODX 2.3+.
+
+- Для типа ввода "param_edit" сделана работа параметра "значние по умолчанию" для цены параметра.
+
+- Для сниппета "param_edit_table" добавлены плейсхолдеры "first_selected" и "first_checked". Дополнена документация.
+
+-----
+
+2.3.8
+
+- Добавлен параметр "processParams" (см. документацию).
+
+-----
+
+2.3.7
+
+- Мелкие доработки.
+
+-----
+
+2.3.6
+
+- Сделана адаптация для MODX Revolution 2.3.
+
+- Исправлена ошибка, из-за которой не работало добавление в заказ товара, который хранится в отдельной таблице БД (migxdb).
+
+- Добавлена документация по сниппету "userOrders" (см. core/components/shopkeeper/docs/doc_ru.txt).
+
+- Мелкие исправления.
+
+-----
+
+2.3.5
+
+- Исправлен пример XML-схемы для таблицы MIGXDB (/core/components/shopkeeper/docs/shop.mysql.schema.xml).
+
+- В плагине shk_contextSwitch теперь учитываются настройки типа контента HTML (расширение).
+
+-----
+
+2.3.4
+
+- Добавлен сниппет "shk_render_tv" для возможности изменять тип вывода в разных шалонах (см. документацию).
+
+- Сделаны доработки по мультивалютности для работы с tagManager2.
+
+- Увеличено число символов для email заказа и др. полей.
+
+-----
+
+2.3.3
+
+- Новый более удобный вид конфигурации в компоненте "Управление заказами".
+
+- Исправлена ошибка с округлением числа до двух знаков после запятой при умножении дробных чисел в ценах.
+
+- Полностью переписан плагин (тип ввода) "param_edit".
+
+-----
+
+2.3.2pl2
+
+- В плагине "shk_tv_input_output" исправлена ошибка, из-за которой не работал вывод доп.параметров товара.
+
+-----
+
+2.3.2
+
+- Плагин "shk_updateInventory" теперь умеет обновлять статистику покупок товара.
+
+- Сниппет "shk_curr_rate" (для мультивалютности) теперь устанавливается автоматически.
+
+- Добавлено событие "OnSHKprintOrderData" - Генерация данных заказа (orderData).
+
+- В компоненте добавлен фильтр заказов по статусу.
+
+- Исправлены проблемы совместимости с MODX 2.2.9.
+
+- Для плагина "shk_contextSwitch" сделана возможность работы с несколькими отдельными таблицами (MIGXDB) для товаров.
+
+-----
+
+2.3.1
+
+- Добавлено событие "OnSHKgetProductAdditParamPrice" - выбор цены доп. параметра товара при добавлении в корзину.
+
+- Добавлен плагин "shk_multicurrency" - мультивалютность (см. документацию).
+
+- Добавлен параметр "additParamSource" - ID источника доп.параметров (ресурс MODX). Полезно, если у всех товаров значения доп.параметра одинаковые (например размер). См. документацию.
+
+- Исправлены мелкие ошибки.
+
+-----
+
+2.3 pl
+
+- В плагине "shk_contextSwitch" добавлена функция просчета полей MIGXDB по типу ввода TV, указанного в поле "InputTV" (см. документацию Shopkeeper).
+
+- Сделаны доработки для товаров из отдельной таблицы БД (migxdb).
+
+- Исправлена ошибка, из-за которой не верно работало добавление товара к заказу в админке.
+
+- jQuery обновлен до версии 1.10.2.
+
+-----
+
+2.3 rc
+
+- Сделана возможность добавлять товары в корзину из любой таблицы БД.
+        Для управления товарами и создания таблицы товаров в БД рекомендуется использовать пакет MIGX (http://modx.com/extras/package/migx) - Автор bruno17.
+        Поддерживаются дружественные URL и кэширование.
+
+- В плагине "shk_delivery" добавлена возможность задавать сумму заказа при которой предоставляется бесплатная доставка (параметр "shk.ordersumm_delivery").
+
+- В плагине "shk_contextSwitch" сделана возможность вывода страницы товара из произвольной таблицы БД. Добавлены действия на событие "OnPageNotFound".
+
+-----
+
+2.2.9
+
+- Для компонента сделан рефакторинг контроллеров (сделаны классы в соответствии с рекоммендациями MODX 2.2+).
+
+- Исправлены мелкие ошибки.
+
+-----
+
+2.2.8
+
+- Добавлено событие для плагинов "OnSHKgetProductAdditParams". Добавлен пример плагина.
+
+- Исправлены визуальные недочёты в компоненте управления заказами.
+
+- Добавлены сниппеты "shk_include" и "userOrders" (раньше нужно было подключать из php-файлов).
+
+-----
+
+2.2.7
+
+- Добавлено для плагинов событие "OnSHKsendOrderMail" - добавление в письма заказов доп. данных.
+
+- Исправлена JS-ошибка, которая возникает в браузере InternetExplorer на сайте с русскоязычным доменом.
+
+- Добавлен виджет статистики заказов.
+
+-----
+
+2.2.6
+
+- Добавлен вариант эффекта добавления товара в корзину (flyToCart) scrollimage - анимация перемещения картинки товара в корзину со скроллингом.
+
+- В shopkeeper.js добавлена функция selectDelivery() - применения выбранного способа доставки (обновление корзины и общей цены). Пример использования в чанке core/components/shopkeeper/elements/chunks/ru/shopOrderForm.tpl.
+
+- Добавлен вариант обновления цены с выбором доп.параметра (changePrice) replace - замена цены (общая цена товара берётся из цены доп.параметра).
+
+- Улучшен вид по умолчанию шаблона писем заказов.
+
+-----
+
+2.2.5
+
+- param_edit теперь поддерживает "Источники файлов".
+
+- Сниппету "param_edit_table" добавлены новые параметры (см. документацию).
+
+- Плагин "contextSwitch" теперь может переключать контексты для всех документов (ресурсов), которые находятся в соответствующем контексте, а не только те, которые находятся в папке. URL может быть без "catalog/" и т.п.
+
+- Исправлены мелкие ошибки.
+
+-----
+
+2.2.4
+
+- В JS-функции SHK.toCartFromArray() теперь можно указывать количество товаров (пример в документации http://modx-shopkeeper.ru/documentation/modx-revolution/javascript-api.html).
+
+- В типе ввода "param-edit" теперь поддерживается вставка картинок. Исправлены ошибки.
+
+- Добавлены параметры fromParentList и fromParentHeight для добавления в корзину товарам данных от родительских ресурсов. Полезно при создании товаров с модификациями как отдельными товарами. См. документацию.
+
+-----
+
+2.2.3
+
+- Для аякс-запросов во внешней части сайта сделан коннектор в папке "assets". Папку "core" теперь можно перемещать за "DocumentRoot".
+
+- При изменении цены через событие плагина "OnSHKgetProductPrice" теперь в чанке корзины (cartRowTpl) доступен плейсхолдер [[+shk_oldprice]] - старая цена.
+
+- Другие мелкие улучшения и исправления.
+
+-----
+
+2.2.2
+
+- Исправлена ошибка в плагине shk_contextSwitch, из-за которой иногда некорректно переключались контексты.
+
+- Исправлена ошибка, из-за которой не работал тип вывода "shk_checkbox".
+
+-----
+
+2.2.1
+
+- Для сниппета добавлен параметр "TVsaveList" - список имён TV-параметров которые нужно сохранить в БД при отправке заказа. Если пусто, сохраняются все TV.
+
+- Для сниппета Shopkeeper добавлен параметр "counterFieldCart" - выводить стрелки "больше/меньше" для полей кол-ва товара в корзине.
+
+- Добавлено событие для плагина "OnSHKScriptsLoad". В компоненте управления заказами есть возможность через плагины добавлять свои кнопки (переменная OnSHKOrdersToolbarLoad) и скрипты.
+
+- Сделан рефакторинг функций getChunk() и parseTpl() класса Shopkeeper для более корректной работы парсера.
+
+- Исправлена ошибка (изменено название пакета) из-за которой не запускалось обновление через "Управление пакетами".
+
+- Из shopkeeper.js убраны функции, которые устарели в jQuery 1.7+.
+
+- Добавлен плагин "shk_order_export" - экспорт заказов в XML (как пример использования события для плагинов "OnSHKScriptsLoad"). Можно использовать для интеграции с 1С.
+
+-----
+
+2.2
+
+- Сделана возможность в компоненте управления заказами редактировать заказ и добавлять товары в заказ.
+
+- В компоненте управления заказами сделана возможность вывода заказов только тех пользователей, которые закреплены за менеджером.
+
+- Добавлена JS-функция recountItemAll - пересчёт всех товаров в корзине.
+
+- На стороне клиента в любой момент доступны ID товаров в корзине: SHK.data.ids. Можно использовать, например, для замены кнопки "в корзину" на "уже в корзине", если товар находится в корзине.
+
+- Исправлены найденные ошибки.
+
+-----
+
+2.1.1
+
+- В плагине shk_contextSwitch добавлена проверка на существование контекста.
+
+-----
+
+2.1
+
+1. Исправлена ошибка из-за которой иногда не отправлялись письма о смене статуса заказа.
+
+2. Добавлен плагин "shk_tv_input_output", благодаря которому теперь не нужно вручную копировать файлы из папки "_upload" (она удалена). Всё устанавливается полностью автоматически.
+
+3. Доработан тип ввода "param-edit". Теперь есть возможность динамически добавлять и удалять поля в столбцах (для создания таблиц и т.п.).
+
+4. Добавлен сниппет "param_edit_table" (shopkeeper/elements/snippets/param_edit_table.php) для вывода таблиц, созданных с помошью "param-edit".
+
+5. Исправлена ошибка из-за которой не сохранялся метод доставки, если он только один.
+
+6. Доработан плагин "shk_contextSwitch". Теперь изменения в .htaccess для переключения контекстов вносить не нужно.
+
+=============================================
+=============================================
+
+Changelog:
+
+2.3.6
+
+- Adaptation for MODX Revolution 2.3.
+
+- Fixed a bug that did not work in order to add the item, which is stored in a separate database table (migxdb).
+
+- Minor fixes.
+
+2.3.2
+
+- Plugin "shk_updateInventory" is now able to update the statistics purchases of goods.
+
+- Snippet "shk_curr_rate" (for multi-currency) is now installed automatically.
+
+- Added event "OnSHKprintOrderData" - Generate purchase order data (orderData).
+
+- Fixed compatibility issues with MODX 2.2.9.
+
+- For plugin "shk_contextSwitch" made ​​the possibility of working with several individual tables (MIGXDB) for the goods.
+
+-----
+
+2.3.1
+
+- Added event "OnSHKgetProductAdditParamPrice" - selection price of additional parameter of product when you add to cart.
+
+- Added plugin "shk_multicurrency" - multi-currency (see documentation).
+
+- Added property "additParamSource" - ID of source addit. parameters (resource MODX).
+
+- Fixed some minor bugs.
+
+-----
+
+2.3 pl
+
+- In the plugin "shk_contextSwitch" added function for process fields output MIGXDB on the TV output type, specified in the "InputTV" (see docs Shopkeeper).
+
+- Made improvements to the products of a individual database table (migxdb).
+
+- Fixed a bug that did not work right product to add to the order in the manager.
+
+- jQuery updated to 1.10.2.
+
+
+2.3rc
+
+- Made to add products to cart from any table in the database.
+        For the management of goods and creating the products table in the database is recommended to use a package MIGX (http://modx.com/extras/package/migx) - Author bruno17.
+        Supported by a friendly URL and caching.
+
+- In the plugin "shk_delivery" added the ability to set the amount of the order in which offers free shipping (option "shk.ordersumm_delivery").
+
+- In the plugin "shk_contextSwitch" made possible the print of the product page of any database table. Added actions for an event "OnPageNotFound".
+
+
+2.2.9
+
+- For CMP maked refactor controllers  (made ​​classes in accordance with the recommendations MODX 2.2 +).
+
+- Fixed minor bugs.
+
+2.2.8
+
+- Added events for plugins "OnSHKgetProductAdditParams". Added an example plugin.
+
+- Fixed visual bugs in the component order management.
+
+- Added snippets "shk_include" and "userOrders" (previously it was necessary to include from php-files).
+
+2.2.5
+
+- "param_edit" now supports "Media sources".
+
+- Snippets "param_edit_table" added new options (see documentation).
+
+- Plugin "contextSwitch" can now switch contexts for all documents (resources) that are in the proper context, not just those that are in the folder. URL can be no "catalog/", etc.
+
+- Fixed minor bugs.
+
+-----
+
+2.2.4
+
+- In JS-function SHK.toCartFromArray() you can now specify the number of products (example in the documentation http://modx-shopkeeper.ru/documentation/modx-revolution/javascript-api.html).
+
+- In the input type "param-edit" now supported insert images. Fixed bugs.
+
+- Added options fromParentList and fromParentHeight to add to cart Product data from parent resources. Useful for creating products with modifications as separate products.
+
+-----
+
+2.2.3
+
+- For ajax-requests in frontend made connector in folder "assets". Folder "core" can now move for "DocumentRoot".
+
+- if you change price in plugin on event "OnSHKgetProductPrice" now chunk shop cart (cartRowTpl) available placeholder [[+shk_oldprice]] - old price.
+
+- Other minor fixes and improvements.
+
+-----
+
+2.2.2
+
+- Fixed a bug in the plugin shk_contextSwitch, because that is sometimes incorrectly switched contexts.
+
+- Fixed a bug that did not work the output type "shk_checkbox".
+
+-----
+
+2.2.1
+
+- For a snippet added parameter "TVsaveList" - a list of names TVs to be saved to the database when you send the order. If empty, all stored TV.
+
+- Added an event for the plugin "OnSHKScriptsLoad". In the order management component have the opportunity to add their own plug-ins button (variable OnSHKOrdersToolbarLoad), and scripts.
+
+- Made refactoring functions getChunk() and parseTpl() of class Shopkeeper for a correct operation of the parser.
+
+- Fixed a bug (changed the package name) because that does not run updates through the "Manage Packages".
+
+- From shopkeeper.js removed the functions that are deprecated in the jQuery 1.7+.
+
+- To Snippet Shopkeeper added setting "counterFieldCart" - print arrows "over / under" for the fields of number of goods in the cart.
+
+- Added plugin "shk_order_export" - export orders in XML (as an example of the use of plugins for the event "OnSHKScriptsLoad").
+
+-----
+
+2.2
+
+- Made possible in the component order management order to edit and add items to your order.
+
+- In the order management component is made the possibility of showing orders only to those users who are assigned to the manager.
+
+- Added JS-function recountItemAll - counting all the items in the cart.
+
+- On the client side at any time available to ID items in your shopping cart: SHK.data.ids. You can use, for example, to replace the button "to cart" to "already in the cart" if the goods are in the cart.
+
+- Fixed bugs.
+
+-----
+
+2.1.1
+
+- In the plugin shk_contextSwitch added check for the existence of context.
+
+-----
+
+2.1
+
+1. Fixed a bug that sometimes not sent letters to change the status of your order.
+
+2. Added plugin "shk_tv_input_output", through which no longer need to manually copy the files from the folder "_upload" (it was removed). Everything is installed automatically.
+
+3. Improved input type "param-edit". It is now possible to dynamically add and remove fields in the columns (to create tables, etc.).
+
+4. Added a snippet "param_edit_table" (shopkeeper/elements/snippets/param_edit_table.php) to output tables created with the aid of "param-edit".
+
+5. Fixed a bug that was not saved delivery method, if it is only one.
+
+6. Improved plug-in "shk_contextSwitch". Now change .htaccess to switch contexts are not need.
+
